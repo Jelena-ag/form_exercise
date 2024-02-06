@@ -1,0 +1,80 @@
+@use './utils/variables';
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	height: 100vh;
+	font-family: 'Poppins', sans-serif;
+	background: linear-gradient(to top right, #fc2c77 0%, #6c4079 100%);
+	color: variables.$maincolor;
+}
+
+.register__card {
+	max-width: 680px;
+	margin: 100px auto;
+	background-color: white;
+	border-radius: 10px;
+
+	&-form {
+		display: flex;
+		flex-direction: column;
+		row-gap: 40px;
+		padding: 50px 40px;
+
+		.contact__forms {
+			display: flex;
+			flex-direction: column;
+			row-gap: 20px;
+
+			.contact__form {
+				display: flex;
+				flex-direction: column;
+
+				&-label {
+					margin-bottom: 5px;
+				}
+
+				&-input {
+					line-height: 40px;
+					padding: 0 20px;
+					border-radius: 5px;
+					background-color: #fafafa;
+					border: none;
+					box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+					font-family: inherit;
+					font-size: 16px;
+					color: variables.$inputcolor;
+					outline: none;
+				}
+
+				option {
+					padding: 7px 5px;
+				}
+
+				&-btn {
+					width: fit-content;
+					padding: 15px 50px;
+					border-radius: 5px;
+					font-size: 18px;
+					color: white;
+					letter-spacing: 1px;
+					background-color: variables.$bgccolor;
+					border: none;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
+
+// @media (min-width: 768px) {
+// 	.register__card {
+
+// 	}
+// }
