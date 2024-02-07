@@ -1,3 +1,9 @@
+// 1. płynne obracanie strzałki select
+// 2. wybrana opcjia ma pojawić się/zostać w inpucie
+// 3. gender -> przy innym wyborze, 'radio' deaktywuje się
+// 4. wybór daty ma działać na całym inpucie, nie tylko na kalendarzu
+// 5. czy można w JS zamiast 2 podobne funkcjie zrobić jedną?
+
 @use './utils/variables';
 
 *,
@@ -33,6 +39,7 @@ body {
 			row-gap: 20px;
 
 			.contact__form {
+				position: relative;
 				display: flex;
 				flex-direction: column;
 
@@ -41,7 +48,7 @@ body {
 				}
 
 				&-input {
-					line-height: 40px;
+					line-height: 50px;
 					padding: 0 20px;
 					border-radius: 5px;
 					background-color: #fafafa;
@@ -53,12 +60,62 @@ body {
 					outline: none;
 				}
 
-				option {
-					padding: 7px 5px;
+				&-gender {
+					padding-bottom: 15px;
+				}
+
+				.form__gender {
+					display: flex;
+					column-gap: 60px;
+
+					&-radio {
+						width: 20px;
+						height: 20px;
+					}
+
+					&-name {
+						padding-left: 10px;
+					}
+				}
+
+				.input-select {
+					cursor: pointer;
+				}
+
+				&-icon {
+					position: absolute;
+					top: 45px;
+					right: 10px;
+					cursor: pointer;
+				}
+
+				.icon-rotate {
+					rotate: 180deg;
+					transform: translateY(50%);
+				}
+
+				&-select {
+					display: none;
+					position: absolute;
+					width: calc(680px - 80px);
+					margin-top: 85px;
+					border: #ede9e9 solid 1px;
+					border-radius: 3px;
+					box-shadow: 5px 4px 7px 0 rgba(0, 0, 0, 0.08);
+					font-size: 16px;
+					option {
+						padding: 8px 20px;
+						cursor: pointer;
+					}
+				}
+
+				.show {
+					display: block;
 				}
 
 				&-btn {
 					width: fit-content;
+					margin-top: 20px;
 					padding: 15px 50px;
 					border-radius: 5px;
 					font-size: 18px;
@@ -73,8 +130,29 @@ body {
 	}
 }
 
-// @media (min-width: 768px) {
-// 	.register__card {
+@media (min-width: 768px) {
+	.register__card {
+		&-form {
+			.contact__forms {
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: space-between;
 
-// 	}
-// }
+				.contact__form {
+					width: 47%;
+
+					.form__gender {
+						column-gap: 40px;
+					}
+
+					.input-select {
+						position: static;
+					}
+				}
+				.select {
+					width: 100%;
+				}
+			}
+		}
+	}
+}

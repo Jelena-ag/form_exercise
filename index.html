@@ -29,10 +29,14 @@
                 <div class="contact__form">
                     <span class="contact__form-gender">Gender</span>
                     <div class="form__gender">
-                        <input class="form__gender-radio" id="gender" type="radio">
-                        <span class="form__gender-name">Male</span>
-                        <input class="form__gender-radio" id="gender" type="radio">
-                        <span class="form__gender-name">Female</span>
+                        <div class="form__gender-check">
+                            <input class="form__gender-radio" id="gender" type="radio">
+                            <span class="form__gender-name">Male</span>
+                        </div>
+                        <div class="form__gender-check">
+                            <input class="form__gender-radio" id="gender" type="radio">
+                            <span class="form__gender-name">Female</span>
+                        </div>
                     </div>
                 </div>
                 <div class="contact__form">
@@ -43,19 +47,19 @@
                     <label class="contact__form-label" for="phone" id="phone">Phone Number</label>
                     <input class="contact__form-input" type="tel" name="phone_number" id="phone">
                 </div>
-                <div class="contact__form">
+                <div class="contact__form select">
                     <label class="contact__form-label" for="subject" id="gender">Subject</label>
-                    <input class="contact__form-input" type="search" name="subject" id="subject"
+                    <input class="contact__form-input input-select" type="search" name="subject" id="subject"
                         placeholder="Choose option">
                     <span class="contact__form-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24"
-                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M6 9l6 6l6 -6" />
-                    </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down"
+                            width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M6 9l6 6l6 -6" />
+                        </svg>
                     </span>
-                        <select class="contact__form-select" name="subject" id="subject" size="4">
+                    <select class="contact__form-select" name="subject" id="subject" size="4">
                         <option value="subject" disabled="disabled" selected="selected">Choose option</option>
                         <option value="subject">Subject 1</option>
                         <option value="subject">Subject 2</option>
@@ -66,6 +70,7 @@
             </form>
         </div>
     </div>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
